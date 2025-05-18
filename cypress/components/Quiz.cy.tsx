@@ -22,5 +22,13 @@ describe('<Quiz />', () => {
       }
 
       cy.get('h2').contains('Quiz Completed').should('be.visible');
+      cy.get('button').contains('Take New Quiz');
+  })
+
+  it('should start the quiz over when Take New Quiz button is clicked', () => {
+    cy.mount(<Quiz />)
+    cy.contains('button', 'Take New Quiz').click(); 
+    cy.get('h2').should('be visible');
+
   })
 });
