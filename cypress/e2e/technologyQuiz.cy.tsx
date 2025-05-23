@@ -11,7 +11,7 @@ describe('Tech Quiz Cycle', () => {
             cy.visit('/');
             cy.contains('button', 'Start Quiz').click();
         });
-a
+
         it('should render a random question when Start Quiz is pressed', () => {
             cy.wait('@getRandomQuestion').its('response.statusCode').should('eq', 200);
             cy.get('h2').should('contain', mockState[0].question);
