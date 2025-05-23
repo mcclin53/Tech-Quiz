@@ -1,5 +1,5 @@
-import questions from "../../fixtures/mockQuestions.json";
-import { Question } from "../types";
+import questions from "../fixtures/mockQuestions.json";
+import { Question } from "../support/types";
 
 export const mockState: Question[] = questions.map((q, i) => ({
     id: `mock-id-${i + 1}`,

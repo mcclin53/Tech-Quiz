@@ -1,4 +1,5 @@
-import { mockState } from '../support/utils/helpers';
+import { mockState } from '../utils/helpers';
+//import { Responses } from '../support/types';
 
 describe('Tech Quiz Cycle', () => {
     context('Quiz Setup',() => {
@@ -10,8 +11,8 @@ describe('Tech Quiz Cycle', () => {
             cy.visit('/');
             cy.contains('button', 'Start Quiz').click();
         });
-
-        it('should GET and render a random question when Start Quiz button pressed', () => {
+a
+        it('should render a random question when Start Quiz is pressed', () => {
             cy.wait('@getRandomQuestion').its('response.statusCode').should('eq', 200);
             cy.get('h2').should('contain', mockState[0].question);
             cy.get('.alert').first().should('contain', mockState[0].answers[0].text)
@@ -20,7 +21,7 @@ describe('Tech Quiz Cycle', () => {
             cy.get('.alert').eq(3).should('contain', mockState[0].answers[3].text)
         })
 
-        it('should GET and render a random question when Take New Quiz button pressed', () => {
+        it('should render a random question when Take New Quiz is pressed', () => {
             for (let i = 0; i < 10; i++){
                 cy.get('button').contains('1').click();
               }
